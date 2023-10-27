@@ -8,7 +8,7 @@ This Python-based utility generates high-quality, readable visualizations of you
 
 ## Try it Out Easily in Colab:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1np5kPvDtdhq138eLHOGINYuTUMJo_wrj?usp=sharing]
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1np5kPvDtdhq138eLHOGINYuTUMJo_wrj?usp=sharing)
 
 ## Features
 
