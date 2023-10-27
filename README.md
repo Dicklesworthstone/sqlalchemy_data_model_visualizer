@@ -6,6 +6,10 @@ This Python-based utility generates high-quality, readable visualizations of you
 
 ![Example Data Model Diagram](https://raw.githubusercontent.com/Dicklesworthstone/sqlalchemy_data_model_visualizer/main/my_interactive_data_model_diagram.svg)
 
+## Try it Out Easily in Colab:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1np5kPvDtdhq138eLHOGINYuTUMJo_wrj?usp=sharing]
+
 ## Features
 
 - Automatically maps SQLAlchemy ORM models to a directed graph.
