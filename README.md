@@ -2,14 +2,15 @@
 
 ## Overview
 
-This Python-based utility generates high-quality, readable visualizations of your SQLAlchemy ORM models. With a focus on clarity and detail, it uses Graphviz to render each model as a directed graph, making it easier to understand the relationships between tables in your database schema.
+This Python-based utility generates high-quality, readable visualizations of your SQLAlchemy ORM models with almost no effort. With a focus on clarity and detail, it uses Graphviz to render each model as a directed graph, making it easier to understand the relationships between tables in your database schema.
+
+![Example Data Model Diagram](https://raw.githubusercontent.com/Dicklesworthstone/sqlalchemy_data_model_visualizer/main/my_interactive_data_model_diagram.svg)
 
 ## Features
 
 - Automatically maps SQLAlchemy ORM models to a directed graph.
 - Table-like representation of each model with fields, types, and constraints.
-- Visual cues for primary keys, unique fields, and indexed fields.
-- Export diagrams to SVG format for high-quality viewing and printing.
+- Export diagrams to SVG format for high-quality viewing and printing using Roboto font. 
 
 ## Installation
 
@@ -18,6 +19,10 @@ To get started, clone the repository and install the required packages.
 ```bash
 git clone https://github.com/Dicklesworthstone/sqlalchemy_data_model_visualizer.git
 cd sqlalchemy_data_model_visualizer
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install wheel
 pip install -r requirements.txt
 ```
 
