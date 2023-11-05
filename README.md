@@ -16,7 +16,19 @@ This Python-based utility generates high-quality, readable visualizations of you
 - Table-like representation of each model with fields, types, and constraints.
 - Export diagrams to SVG format for high-quality viewing and printing using Roboto font. 
 
-## Installation
+## Installation with pip and Usage:
+
+```bash
+pip install sqlalchemy-data-model-visualizer
+
+# Suppose these are your SQLAlchemy data models defined above in the usual way, or imported from another file:
+models = [GenericUser, Customer, ContentCreator, UserSession, FileStorage, ServiceRequest, GenericAuditLog, GenericFeedback, GenericAPIKey, GenericNotification, GenericAPICreditLog, GenericSubscriptionType, GenericSubscription, GenericSubscriptionUsage, GenericBillingInfo]
+output_file_name = 'my_data_model_diagram'
+generate_data_model_diagram(models, output_file_name)
+add_web_font_and_interactivity('my_data_model_diagram.svg', 'my_interactive_data_model_diagram.svg')
+```
+
+## Installation from Source
 
 To get started, clone the repository and install the required packages.
 
