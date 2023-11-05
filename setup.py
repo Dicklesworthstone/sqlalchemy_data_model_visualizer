@@ -12,7 +12,7 @@ requirements = (here / 'requirements.txt').read_text(encoding='utf-8').splitline
 
 setup(
     name='sqlalchemy_data_model_visualizer',
-    version='0.1.1',  # Update the version number for new releases
+    version='0.1.2',  # Update the version number for new releases
     description='A tool to visualize SQLAlchemy data models with Graphviz.',
     long_description=long_description,
     long_description_content_type='text/markdown',
