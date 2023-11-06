@@ -59,10 +59,11 @@ Then, simply call the `generate_data_model_diagram` function. This will generate
 
 ## API Documentation
 
-### `generate_data_model_diagram(models, output_file='my_data_model_diagram')`
+### `generate_data_model_diagram(models, output_file='my_data_model_diagram', add_labels=True)`
 
 - `models`: List of SQLAlchemy models you want to visualize.
 - `output_file`: Name of the output SVG file.
+- `add_labels`: Set to False to hide labels on the edges between tables
 
 ## Contributing
 

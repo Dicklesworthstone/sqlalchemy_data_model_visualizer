@@ -12,7 +12,7 @@ import os
 import re
 Base = declarative_base()
 
-def generate_data_model_diagram(models, output_file='my_data_model_diagram'):
+def generate_data_model_diagram(models, output_file='my_data_model_diagram', add_labels=True):
     # Initialize graph with more advanced visual settings
     dot = graphviz.Digraph(comment='Interactive Data Models', format='svg', 
                             graph_attr={'bgcolor': '#EEEEEE', 'rankdir': 'TB', 'splines': 'spline'},
@@ -56,7 +56,7 @@ def generate_data_model_diagram(models, output_file='my_data_model_diagram'):
         for rel in insp.relationships:
             target_name = rel.mapper.class_.__name__
             tooltip = f"Relation between {name} and {target_name}"
-            dot.edge(name, target_name, label=rel.key, tooltip=tooltip, color="#1E88E5", style="dashed")
+            dot.edge(name, target_name, label=rel.key if add_labels else None, tooltip=tooltip, color="#1E88E5", style="dashed")
 
     # Render the graph to a file and open it
     dot.render(output_file, view=True)           
@@ -301,5 +301,5 @@ if use_demo:
     
     output_file_name = 'my_data_model_diagram'
     # Generate the diagram and add interactivity
-    generate_data_model_diagram(models, output_file_name)
+    generate_data_model_diagram(models, output_file_name, add_labels=True)
     add_web_font_and_interactivity('my_data_model_diagram.svg', 'my_interactive_data_model_diagram.svg')
