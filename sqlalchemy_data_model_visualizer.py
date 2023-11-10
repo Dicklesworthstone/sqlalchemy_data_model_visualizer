@@ -12,7 +12,7 @@ import os
 import re
 Base = declarative_base()
 
-def generate_data_model_diagram(models, output_file='my_data_model_diagram', add_labels=True):
+def generate_data_model_diagram(models, output_file='my_data_model_diagram', add_labels=True, view_diagram=True):
     # Initialize graph with more advanced visual settings
     dot = graphviz.Digraph(comment='Interactive Data Models', format='svg', 
                             graph_attr={'bgcolor': '#EEEEEE', 'rankdir': 'TB', 'splines': 'spline'},
@@ -59,7 +59,7 @@ def generate_data_model_diagram(models, output_file='my_data_model_diagram', add
             dot.edge(name, target_name, label=rel.key if add_labels else None, tooltip=tooltip, color="#1E88E5", style="dashed")
 
     # Render the graph to a file and open it
-    dot.render(output_file, view=True)           
+    dot.render(output_file, view=view_diagram)           
 
 
 def add_web_font_and_interactivity(input_svg_file, output_svg_file):
