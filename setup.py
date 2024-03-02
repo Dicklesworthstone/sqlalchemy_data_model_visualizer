@@ -1,3 +1,5 @@
+"""setup.py file for the sqlalchemy_data_model_visualizer package."""
+
 from pathlib import Path
 
 from setuptools import setup

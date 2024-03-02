@@ -1,11 +1,30 @@
-import os
+"""sqlalchemy_data_model_visualizer."""
+
+from pathlib import Path
 
 import graphviz
 from lxml import etree
 from sqlalchemy import inspect
+from sqlalchemy.orm import declarative_base
 
 
-def generate_data_model_diagram(models, output_file="my_data_model_diagram", add_labels=True, view_diagram=True):
+def generate_data_model_diagram(
+    models: list[declarative_base],
+    output_file: str = "my_data_model_diagram",
+    add_labels: bool = True,
+    view_diagram: bool = True,
+) -> None:
+    """Generate a data model diagram from a list of SQLAlchemy models.
+
+    Args:
+        models (list[any]): A list of SQLAlchemy models to visualize.
+        output_file (str, optional): The name of the output file. Defaults to "my_data_model_diagram".
+        add_labels (bool, optional): Whether to add labels to the edges. Defaults to True.
+        view_diagram (bool, optional): Whether to open the diagram after rendering. Defaults to True.
+
+    Returns:
+        None: The diagram is saved to a file and optionally opened in the default viewer.
+    """
     # Initialize graph with more advanced visual settings
     dot = graphviz.Digraph(
         comment="Interactive Data Models",
@@ -65,17 +84,20 @@ def generate_data_model_diagram(models, output_file="my_data_model_diagram", add
     dot.render(output_file, view=view_diagram)
 
 
-def add_web_font_and_interactivity(input_svg_file, output_svg_file):
-    if not os.path.exists(input_svg_file):
-        print(f"Error: {input_svg_file} does not exist.")
-        return
+def add_web_font_and_interactivity(input_svg_file: str, output_svg_file: str) -> None:
+    """Add web font and interactivity to an SVG file.
+
+    Args:
+        input_svg_file (str): The input SVG file.
+        output_svg_file (str): The output SVG file.
+    """
+    if not Path(input_svg_file).exists():
+        error = f"Error: {input_svg_file} does not exist."
+        raise FileNotFoundError(error)
 
     parser = etree.XMLParser(remove_blank_text=True)
-    try:
-        tree = etree.parse(input_svg_file, parser)
-    except etree.XMLSyntaxError as e:
-        print(f"Error parsing SVG: {e}")
-        return
+    # The input can be trusted
+    tree = etree.parse(input_svg_file, parser)  # noqa: S320
 
     root = tree.getroot()
 
