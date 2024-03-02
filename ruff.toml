@@ -1,11 +1,13 @@
-select = ["ALL"]
-target-version = "py38"
+lint.select = ["ALL"]
+target-version = "py39"
 
 line-length = 120
 
 
-ignore = [
-    "G004", # PERM: This is a preformen nit that dosnt genrely matter (https://docs.astral.sh/ruff/rules/logging-f-string/)
+lint.ignore = [
+    "G004",   # PERM: This is a preformen nit that dosnt genrely matter (https://docs.astral.sh/ruff/rules/logging-f-string/)
+    "FBT001", # PERM: This is desired behavior for this code (https://docs.astral.sh/ruff/rules/boolean-type-hint-positional-argument/)
+    "FBT002", # PERM: This is desired behavior for this code (https://docs.astral.sh/ruff/rules/boolean-default-value-positional-argument/)
 ]
 
 [lint.pydocstyle]
