@@ -1,0 +1,15 @@
+select = ["ALL"]
+target-version = "py38"
+
+line-length = 120
+
+
+ignore = [
+    "G004", # PERM: This is a preformen nit that dosnt genrely matter (https://docs.astral.sh/ruff/rules/logging-f-string/)
+]
+
+[lint.pydocstyle]
+convention = "google"
+
+[lint.flake8-builtins]
+builtins-ignorelist = ["id"]
